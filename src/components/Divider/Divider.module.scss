@@ -1,0 +1,15 @@
+@import 'styles/variables';
+
+.divider__base {
+  border-color: rgba(0, 0, 0, 0.103);
+}
+
+.divider__vertical {
+  @extend .divider__base;
+}
+
+.divider__horizontal {
+  width: 100%;
+  // border-bottom: 1px solid lighten(map-get($border-colors, default), 10%);
+  @extend .divider__base;
+}

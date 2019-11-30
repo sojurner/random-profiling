@@ -1,0 +1,13 @@
+@import 'styles/variables.scss';
+
+.main_appBar {
+  align-items: center;
+  background-color: map-get($experimental, secondary-blank);
+  display: flex;
+  grid-area: appbar;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 0 8px 0 rgba(170, 179, 189, 0.466);
+}

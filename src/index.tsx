@@ -1,8 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+
+import Base from '~shared/Base';
+
+import './styles/base.scss';
+
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Base />
+    </BrowserRouter>
+  );
+};
+
+export default App;
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

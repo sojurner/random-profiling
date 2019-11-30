@@ -1,0 +1,63 @@
+@import 'styles/variables';
+
+.card__base {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  background: map-get($experimental, blank);
+  border: 0.5px solid #f1f1f1;
+}
+
+.card__profile {
+  @extend .card__base;
+  height: 330px;
+
+  position: relative;
+  grid-area: profile;
+
+  header {
+    background: map-get($experimental, blank);
+    border-radius: 50px 70px 0 67px;
+    bottom: 100px;
+    display: flex;
+    left: 30px;
+    position: absolute;
+    width: 70%;
+  }
+
+  img {
+    margin-top: -20px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid white;
+  }
+}
+
+.card__poem {
+  @extend .card__base;
+  margin: 20px 0 0 0;
+  padding: 20px;
+}
+
+.card__news {
+  @extend .card__base;
+  display: flex;
+  padding: 20px 10px;
+  margin-bottom: 1rem;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    border: 0.5px solid rgba(0, 0, 0, 0.11);
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1),
+      0 4px 10px -2px rgba(0, 0, 0, 0.05);
+  }
+  img {
+    padding-left: 1rem;
+    min-height: 80px;
+    max-height: 80px;
+    min-width: 110px;
+    max-width: 110px;
+    justify-self: flex-end;
+  }
+}

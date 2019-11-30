@@ -1,0 +1,41 @@
+.label__friend {
+  width: max-content;
+  margin: 0 10px;
+}
+
+.profileCard__userInfo {
+  margin-left: 5px;
+}
+
+.poemCard {
+  &__caption {
+    margin-bottom: 10px;
+    color: gray;
+  }
+
+  &__content {
+  }
+
+  &__author {
+    margin-top: 10px;
+  }
+}
+
+.newsCard {
+  &__title {
+    margin: 0 0 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    font-size: 1em;
+    text-decoration-line: none;
+  }
+
+  &__src {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,22 @@
+$primary-colors: (
+  default: #1d2951,
+  active: #003152,
+  hover: #0e4d92
+);
+
+$secondary-colors: (
+  default: #ffbf00,
+  active: #ffcf40,
+  hover: #ffdc73
+);
+
+$experimental: (
+  blank: white,
+  default: #fafffe,
+  secondary-blank: rgb(241, 253, 252),
+  tertiary-blank: rgb(245, 245, 245)
+);
+
+$border-colors: (
+  default: rgba(0, 0, 0, 0.2)
+);

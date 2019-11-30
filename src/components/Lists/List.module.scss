@@ -1,0 +1,74 @@
+@import 'styles/variables';
+
+.list__base {
+  width: max-content;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.list__friends {
+  @extend .list__base;
+  border-left: 0.5px solid map-get($border-colors, default);
+
+  li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    border-radius: 50px;
+
+    &:hover {
+      img {
+        border: 0.5px solid rgba(0, 0, 0, 0.4);
+      }
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 0.5px solid transparent;
+  }
+
+  &__Item-active {
+    pointer-events: none;
+
+    img {
+      border: 0.5px solid rgba(0, 0, 0, 0.4);
+    }
+    p {
+      font-weight: bold;
+    }
+
+    li {
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+        border-bottom: 12px solid #cfcfcf;
+        border-bottom-color: #cfcfcf;
+        position: absolute;
+        top: 0px;
+        left: -18px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -18px;
+        top: 19px;
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+        border-top: 12px solid #cfcfcf;
+        border-top-color: #cfcfcf;
+      }
+    }
+  }
+}

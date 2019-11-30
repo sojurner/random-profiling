@@ -1,0 +1,26 @@
+@import 'styles/variables';
+
+$bg: rgb(252, 252, 252);
+
+//----------- shared classes -----------start//
+
+//----------- shared classes -----------end//
+
+//----------- classlist -----------start//
+
+.collapsible {
+  display: block;
+  transition: height 0.2s ease-out;
+  overflow: auto;
+  width: max-content;
+
+  &-close {
+    height: 0;
+  }
+
+  &-open {
+    height: 565px;
+  }
+}
+
+//----------- classlist -----------end//
