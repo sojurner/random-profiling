@@ -23,6 +23,7 @@
       "~api/*": ["api/*"],
       "~utils/*": ["utils/*"],
       "~routes/*": ["routes/*"],
+      "~assets/*": ["assets/*"],
       "~shared/*": ["shared/*"]
     }
   },

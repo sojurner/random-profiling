@@ -1,6 +1,8 @@
+import { monthNames } from '~utils/date';
+
 export const fetchWeather = async (lat: string, lng: string) => {
-  const url = `https://weatherlee-server.herokuapp.com/api/darksky?latitude=${lat}&longitude=${lng}`;
-  return scrapeWeather(await (await fetch(url)).json());
+  const darkSkyURL = `https://weatherlee-server.herokuapp.com/api/darksky?latitude=${lat}&longitude=${lng}`;
+  return scrapeWeather(await (await fetch(darkSkyURL)).json());
 };
 
 export const scrapeWeather = (raw: any) => {
@@ -8,10 +10,27 @@ export const scrapeWeather = (raw: any) => {
 
   const { temperatureHigh, temperatureLow } = dailyWeather;
 
-  return {
+  const daily = {
     temperature: `${Math.floor(raw.currently.temperature)}°`,
-    icon: raw.minutely.icon,
+    summary: raw.hourly.summary,
+    icon: raw.currently.icon,
     high: `${Math.floor(temperatureHigh)}°`,
     low: `${Math.floor(temperatureLow)}°`
   };
+
+  const weekly = raw.daily.data.slice(1).map((day: any) => {
+    const { icon, time } = day;
+    const date = new Date(time * 1000);
+
+    return {
+      date: `${monthNames[date.getMonth()].slice(0, 3)} ${date.getDate()}`,
+      icon,
+      high: `${Math.floor(day.temperatureHigh)}°`,
+      low: `${Math.floor(day.temperatureLow)}°`
+    };
+  });
+
+  console.log(weekly);
+
+  return { daily, weekly };
 };

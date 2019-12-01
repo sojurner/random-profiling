@@ -4,6 +4,7 @@ import Skeleton from 'react-loading-skeleton';
 
 import FlexBox from '~components/Flexbox';
 import PoemCard from '~components/Cards/PoemCard';
+import CategoryHeader from '~components/Headers/CategoryHeader';
 
 import { usePoemistApiHook } from '~utils/hooks';
 import { IPoem } from '~api/poemist';
@@ -13,6 +14,7 @@ const PoemPosts: React.FC<RouteComponentProps> = ({ match }) => {
 
   return poems && !loading ? (
     <FlexBox gridArea="poems" flexWrap="wrap">
+      <CategoryHeader children="Posts" style={{ margin: '10px 0 -2px 0' }} />
       {poems.map(poem => (
         <PoemCard content={poem.content} author={poem.poet} />
       ))}

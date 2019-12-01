@@ -3,8 +3,8 @@ import styles from './Typography.module.scss';
 
 export interface ITypographyProps {
   variant: string;
-  children: string;
   className: string;
+  children: string;
 }
 
 const Typography: React.FC<ITypographyProps> = ({

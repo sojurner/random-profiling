@@ -6,6 +6,7 @@ import ProfileCard from '~components/Cards/ProfileCard';
 import NewsFeed from '~components/NewsFeed';
 import PoemPosts from '~components/PoemPosts';
 import FlexBox from '~components/Flexbox';
+import WeatherInfo from '~components/WeatherInfo';
 
 const ProfilePage: React.FC<RouteComponentProps> = ({ location, history }) => {
   if (!location.state) {
@@ -31,7 +32,13 @@ const ProfilePage: React.FC<RouteComponentProps> = ({ location, history }) => {
           />
           <PoemPosts />
         </FlexBox>
-        <NewsFeed />
+        <FlexBox flexDirection="column">
+          <WeatherInfo
+            latitude={location.state.user.coords.latitude}
+            longitude={location.state.user.coords.longitude}
+          />
+          <NewsFeed />
+        </FlexBox>
       </FlexBox>
     );
   }

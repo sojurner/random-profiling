@@ -6,6 +6,8 @@ import NewsCard, {
 } from '~components/Cards/NewsCard';
 import FlexBox from '~components/Flexbox';
 import { useNewsApiHook } from '~utils/hooks';
+import Typography from '~components/Typography';
+import CategoryHeader from '~components/Headers/CategoryHeader';
 
 const NewsFeed = () => {
   const [news, loading] = useNewsApiHook() as [INewsProps[], boolean];
@@ -17,6 +19,7 @@ const NewsFeed = () => {
       padding="30px 50px 0 0"
       borderRadius="0.5rem"
     >
+      <CategoryHeader children="Latest News" />
       {news.map((newsArticle: INewsProps, index: number) => (
         <NewsCard key={`newsCard-${index}`} {...newsArticle} />
       ))}

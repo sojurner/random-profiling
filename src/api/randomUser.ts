@@ -19,6 +19,10 @@ const parseUsers = (users: any[]): IUser[] => {
       gender,
       fullName: `${name.first} ${name.last}`,
       address: `${location.city}, ${location.state}`,
+      coords: {
+        latitude: location.coordinates.latitude,
+        longitude: location.coordinates.longitude
+      },
       email,
       userInfo: {
         id: login.uuid,
