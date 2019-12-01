@@ -1,0 +1,32 @@
+@import 'styles/variables';
+
+.weatherCurrent {
+  padding: 0 0 30px 0;
+  align-items: center;
+  display: flex;
+  margin-right: 30px;
+
+  &__highLow {
+    padding: 0.6em 0.6em;
+    position: relative;
+    margin-left: 0.5em;
+    align-items: center;
+    border: 0.5px solid #384646;
+    border-radius: 50px;
+    display: flex;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 50px;
+      left: -50px;
+      border-top: 1px solid black;
+    }
+  }
+}
+
+.weatherWeekly {
+  display: flex;
+  justify-content: space-between;
+}

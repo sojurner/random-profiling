@@ -1,3 +1,5 @@
+@import 'styles/variables';
+
 .label__friend {
   width: max-content;
   margin: 0 10px;
@@ -21,6 +23,25 @@
   }
 }
 
+.newsFeed {
+  &__header {
+    font-weight: bold;
+    position: relative;
+    margin: 0 0 20px 0;
+    width: max-content;
+    &:after {
+      content: '';
+      height: 0.35rem;
+      width: 100%;
+      background: rgb(214, 237, 255);
+      display: block;
+      position: absolute;
+      bottom: -7px;
+      transform: skewX(-45deg);
+    }
+  }
+}
+
 .newsCard {
   &__title {
     margin: 0 0 5px 0;
@@ -37,5 +58,29 @@
   &__src {
     font-style: italic;
     font-size: 0.9em;
+  }
+}
+
+.weatherInfo {
+  &__current {
+    font-size: 2em;
+    color: map-get($weather-colors, current);
+    padding: 0.2em 0.2em 0.2em 0.4em;
+  }
+
+  &__date {
+    font-size: 1em;
+  }
+
+  &__high {
+    color: map-get($weather-colors, high);
+    font-size: 1em;
+    margin: 2.5px 0;
+  }
+
+  &__low {
+    color: map-get($weather-colors, low);
+    font-size: 1em;
+    margin: 2.5px 0;
   }
 }

@@ -20,3 +20,9 @@ $experimental: (
 $border-colors: (
   default: rgba(0, 0, 0, 0.2)
 );
+
+$weather-colors: (
+  low: #9ba7ff,
+  high: rgb(250, 101, 126),
+  current: map-get($primary-colors, default)
+);

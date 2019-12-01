@@ -1,9 +1,9 @@
-const weatherIcons = {
+const weatherIcons: any = {
   'clear-day': [
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -46,7 +46,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -56,7 +56,8 @@ const weatherIcons = {
       }
     },
     {
-      path: {
+      type: 'path',
+      props: {
         d: `
               M7.91,14.48c0-0.96,0.19-1.87,0.56-2.75s0.88-1.63,1.51-2.26c0.63-0.63,1.39-1.14,2.27-1.52c0.88-0.38,1.8-0.57,2.75-0.57
               h1.14c0.16,0.04,0.23,0.14,0.23,0.28l0.05,0.88c0.04,1.27,0.49,2.35,1.37,3.24c0.88,0.89,1.94,1.37,3.19,1.42l0.82,0.07
@@ -74,7 +75,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -108,7 +109,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -142,7 +143,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -188,7 +189,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -230,7 +231,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -265,7 +266,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -318,7 +319,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -369,7 +370,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -412,7 +413,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -449,7 +450,7 @@ const weatherIcons = {
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -486,11 +487,11 @@ const weatherIcons = {
       }
     }
   ],
-  windy: [
+  wind: [
     {
       type: 'svg',
       props: {
-        fill: 'white',
+        fill: 'black',
         viewBox: '0 0 30 30',
         height: '1em',
         width: '1em',
@@ -518,4 +519,4 @@ const weatherIcons = {
   ]
 };
 
-export default weatherIcons;
+export { weatherIcons };
