@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Typography, { ITypographyProps } from '~components/Typography';
+import Typography from '~components/Typography';
 
 interface ICategoryProps {
   style?: React.CSSProperties;
@@ -8,7 +8,7 @@ interface ICategoryProps {
 }
 
 const CategoryHeader: React.FC<ICategoryProps> = props => {
-  return <Typography variant="h2" className="newsFeed__header" {...props} />;
+  return <Typography variant="h3" className="newsFeed__header" {...props} />;
 };
 
 export default CategoryHeader;

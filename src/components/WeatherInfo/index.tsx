@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useDarkskyApiHook } from '~utils/hooks';
+import { useDarkskyApiHook } from '~utils/hooks/apiHooks';
 import WeatherCard, {
   WeatherCardSkeleton
 } from '~components/Cards/WeatherCard';
@@ -14,7 +14,7 @@ const WeatherInfo: React.FC<{ latitude: string; longitude: string }> = ({
 
   return forecast && !loading ? (
     <>
-      <CategoryHeader style={{marginTop: 30}} children={'Weather'} />
+      <CategoryHeader style={{ marginTop: 30 }} children={'Weather'} />
       <WeatherCard daily={forecast.daily} weekly={forecast.weekly} />
     </>
   ) : (

@@ -37,8 +37,8 @@ const parseUsers = (users: any[]): IUser[] => {
   );
 };
 
-const getRandomUsers = async () => {
-  const response = await fetch(`${randomUserURL}/?results=20`);
+const getRandomUsers = async (count: number) => {
+  const response = await fetch(`${randomUserURL}/?results=${count}`);
   if (response.status === 200) {
     return parseUsers((await response.json()).results);
   } else {

@@ -13,4 +13,10 @@ const monthNames = [
   'December'
 ];
 
-export { monthNames };
+function generateRandomTimestamp(offset: number) {
+  const todaysTimestamp = Date.now();
+  const lowerLimitTimestamp = todaysTimestamp - offset;
+  return Math.floor(offset * Math.random() + lowerLimitTimestamp);
+}
+
+export { monthNames, generateRandomTimestamp };

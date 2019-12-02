@@ -1,5 +1,5 @@
 import React from 'react';
-import { weatherIcons } from '~assets/weather';
+import { weatherIcons } from '~assets/weatherIcons';
 
 interface WeatherIconProps extends React.HTMLAttributes<HTMLSpanElement> {
   iconName: string;
@@ -14,7 +14,6 @@ const CustomJSX: React.FC<{ iconName: string }> = ({ iconName }) => {
       null
     );
   });
-  console.log(iconProps);
   return React.createElement('svg', { ...iconProps[0].props }, children);
 };
 

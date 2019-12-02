@@ -5,8 +5,7 @@ import NewsCard, {
   INewsProps
 } from '~components/Cards/NewsCard';
 import FlexBox from '~components/Flexbox';
-import { useNewsApiHook } from '~utils/hooks';
-import Typography from '~components/Typography';
+import { useNewsApiHook } from '~utils/hooks/apiHooks';
 import CategoryHeader from '~components/Headers/CategoryHeader';
 
 const NewsFeed = () => {

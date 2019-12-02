@@ -1,11 +1,11 @@
 import { monthNames } from '~utils/date';
 
-export const fetchWeather = async (lat: string, lng: string) => {
+const fetchWeather = async (lat: string, lng: string) => {
   const darkSkyURL = `https://weatherlee-server.herokuapp.com/api/darksky?latitude=${lat}&longitude=${lng}`;
   return scrapeWeather(await (await fetch(darkSkyURL)).json());
 };
 
-export const scrapeWeather = (raw: any) => {
+const scrapeWeather = (raw: any) => {
   const [dailyWeather] = raw.daily.data;
 
   const { temperatureHigh, temperatureLow } = dailyWeather;
@@ -30,7 +30,7 @@ export const scrapeWeather = (raw: any) => {
     };
   });
 
-  console.log(weekly);
-
   return { daily, weekly };
 };
+
+export { scrapeWeather, fetchWeather };

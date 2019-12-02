@@ -1,12 +1,24 @@
 import React from 'react';
 import Icon from '@mdi/react';
 import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
+import Skeleton from 'react-loading-skeleton';
 
-import { IUser } from '~types/api';
 import FriendList from '~components/Lists/FriendList';
 import Typography from '~components/Typography';
 import FlexBox from '~components/Flexbox';
 import Collapsible from '~components/Collapsible';
+
+import { IUser } from '~types/api';
+
+const SidePanelSkeleton = () => {
+  return (
+    <FlexBox flexDirection="column">
+      {Array.from(Array(10).keys()).map((_, index) => (
+        <Skeleton key={`users-skeleton-${index}`} height={40} count={1} />
+      ))}
+    </FlexBox>
+  );
+};
 
 const SidePanel: React.FC<{ list: IUser[] }> = ({ list }) => {
   const [collapsed, setCollapsed] = React.useState(false);
@@ -36,4 +48,4 @@ const SidePanel: React.FC<{ list: IUser[] }> = ({ list }) => {
   );
 };
 
-export default SidePanel;
+export { SidePanelSkeleton, SidePanel as default };

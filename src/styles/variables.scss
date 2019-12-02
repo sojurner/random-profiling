@@ -26,3 +26,7 @@ $weather-colors: (
   high: rgb(250, 101, 126),
   current: map-get($primary-colors, default)
 );
+
+$break-points: (
+  large: 1200px
+);

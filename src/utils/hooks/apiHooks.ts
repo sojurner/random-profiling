@@ -5,8 +5,9 @@ import { getRandomPic } from '~api/unsplash';
 import { getRandomPoems } from '~api/poemist';
 import { fetchNews } from '~api/news';
 import { fetchWeather } from '~api/darksky';
+import { getRandomKanyeQuote } from '~api/kanye';
 
-const useRandomUsersApiHook = () => {
+const useRandomUsersApiHook = (userCount: number) => {
   const [users, setUsers] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -14,7 +15,7 @@ const useRandomUsersApiHook = () => {
     (async () => {
       setLoading(state => !state);
 
-      const randomUsers = await getRandomUsers();
+      const randomUsers = await getRandomUsers(userCount);
       setUsers(randomUsers);
       setLoading(state => !state);
     })();
@@ -84,10 +85,34 @@ const useDarkskyApiHook = (latitude: string, longitude: string) => {
   return [forecast, loading];
 };
 
+const useKanyeApiHook = (count: number) => {
+  const [quotes, setQuotes] = useState<string[]>([]);
+  const [collaspedComments, setCollapsedComments] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      for (let i = 0; i < count; i++) {
+        const randomQuote = await getRandomKanyeQuote();
+        setQuotes(state => [...state, randomQuote]);
+      }
+      setLoading(false);
+    })();
+  }, []);
+
+  const handleCommentsToggle = (command: boolean) => {
+    setCollapsedComments(command);
+  };
+
+  return [quotes, loading, collaspedComments, handleCommentsToggle];
+};
+
 export {
   useRandomUsersApiHook,
   useUnsplashPicApiHook,
   usePoemistApiHook,
   useNewsApiHook,
-  useDarkskyApiHook
+  useDarkskyApiHook,
+  useKanyeApiHook
 };

@@ -8,11 +8,13 @@ import {
 } from '@mdi/js';
 
 import styles from './Card.module.scss';
-import { useUnsplashPicApiHook } from '~utils/hooks';
+import { useUnsplashPicApiHook } from '~utils/hooks/apiHooks';
 import { monthNames } from '~utils/date';
 import FlexBox from '~components/Flexbox';
 import Typography from '~components/Typography';
-import Skeleton from 'react-loading-skeleton';
+import ProfileBackground, {
+  ProfileBackgroundSkeleton
+} from '~components/ProfileBackground';
 
 interface IProfileCardProps {
   img: string;
@@ -40,19 +42,12 @@ const ProfileCard: React.FC<IProfileCardProps> = ({
   return (
     <section className={styles.card__profile}>
       {bgPic && !loading ? (
-        <FlexBox
-          height={200}
-          width={500}
-          borderRadius={10}
-          backgroundPosition="center center"
-          backgroundSize="cover"
-          backgroundImage={`url(${bgPic})`}
-        />
+        <ProfileBackground img={bgPic} />
       ) : (
-        <Skeleton count={1} height={200} width={500} />
+        <ProfileBackgroundSkeleton />
       )}
       <header>
-        <img src={img} />
+        <img src={img} alt={name} />
         <FlexBox marginLeft={10} justifyContent="center" flexDirection="column">
           <Typography variant="h2" className="" children={name} />
           <Typography variant="h4" className="" children={email} />

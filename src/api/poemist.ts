@@ -1,14 +1,23 @@
+import { generateRandomTimestamp } from '~utils/date';
+
 const poemistURL = 'https://www.poemist.com/api/v1/randompoems';
 
 export interface IPoem {
   content: string;
   poet: string;
+  date: Date;
 }
 
 const parseContent = (poems: any[]): IPoem[] => {
-  return poems.map(({ content, poet }) => ({
+  const sortedRandomDates = Array.from(Array(poems.length).keys())
+    .map(_ => generateRandomTimestamp(4000000000))
+    .sort((a: number, b: number) => b - a)
+    .map(timestamp => new Date(timestamp));
+
+  return poems.map(({ content, poet }, index) => ({
     content,
-    poet: poet.name
+    poet: poet.name,
+    date: sortedRandomDates[index]
   }));
 };
 

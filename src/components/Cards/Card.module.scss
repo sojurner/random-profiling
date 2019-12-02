@@ -6,13 +6,13 @@
   border-radius: 10px;
   background: map-get($experimental, blank);
   border: 0.5px solid #f1f1f1;
+  position: relative;
 }
 
 .card__profile {
   @extend .card__base;
   height: 330px;
 
-  position: relative;
   grid-area: profile;
 
   header {
@@ -36,11 +36,12 @@
 .card__poem {
   @extend .card__base;
 
+  min-width: 460px;
+  padding: 20px;
+
   &:not(:first-child) {
     margin: 20px 0 0 0;
   }
-
-  padding: 20px;
 }
 
 .card__news {
