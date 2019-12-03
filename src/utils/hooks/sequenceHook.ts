@@ -1,25 +1,30 @@
 import { useState, useEffect } from 'react';
+import NH from 'history';
 
-type TakeNoneGiveNone = () => void;
+type TakeTypeGiveNone<T> = (arg: T) => void;
 
 const useSequenceHook = (
   sequenceLength: number
-): [number, TakeNoneGiveNone] => {
+): [number, TakeTypeGiveNone<null>, TakeTypeGiveNone<NH.History>] => {
   const [currentSequence, setCurrentSequence] = useState<number>(
     sequenceLength
   );
 
   useEffect(() => {
     setTimeout(() => {
-      nextSequence();
+      nextSequence(null);
     }, 2500);
   }, []);
 
-  const nextSequence: TakeNoneGiveNone = () => {
+  const nextSequence: TakeTypeGiveNone<null> = () => {
     setCurrentSequence(state => state - 1);
   };
 
-  return [currentSequence, nextSequence];
+  const pushPath: TakeTypeGiveNone<NH.History> = history => {
+    history.push('/create-profile');
+  };
+
+  return [currentSequence, nextSequence, pushPath];
 };
 
 export { useSequenceHook };

@@ -2,6 +2,8 @@ import React from 'react';
 
 import Button from '~components/Button';
 
+import styles from './Stepper.module.scss';
+
 interface IStepNavActionsProps extends React.HTMLAttributes<HTMLDivElement> {
   canBack: boolean;
   canForward: boolean;
@@ -18,18 +20,18 @@ const StepperNavActions: React.FC<IStepNavActionsProps> = ({
   isLast
 }) => {
   return (
-    <footer>
+    <footer className={styles.stepperNavActions}>
       <Button
         onClick={handlePrevStep}
         disabled={!canBack}
-        children="back"
-        className="stepper__prev-btn"
+        children="Back"
+        className="button__stepperNavActions-prev"
       />
       <Button
         onClick={handleNextStep}
         disabled={!canForward}
-        children="next"
-        className="stepper__next-btn"
+        children="Next"
+        className="button__stepperNavActions-next"
       />
       {isLast && <Button className="" children={'Run'} />}
     </footer>

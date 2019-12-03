@@ -1,0 +1,92 @@
+@import 'styles/variables';
+
+$frame-color: rgba(0, 0, 0, 0.123);
+$placeholder-color: rgb(124, 124, 124);
+
+.input__base {
+  background: none;
+  &:focus {
+    outline: none;
+  }
+  box-sizing: border-box;
+}
+
+.profileInput {
+  // border-bottom: 2px solid $frame-color;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 20px;
+
+  input {
+    @extend .input__base;
+    flex: 1 1 auto;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font-size: 1.3em;
+    margin: 20px 0;
+    padding-left: 10px;
+    padding-bottom: 8px;
+  }
+
+  label {
+    font-size: 1.3em;
+    margin-left: 8px;
+    border-bottom: 2px solid $frame-color;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 8px;
+    color: $placeholder-color;
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  &__fullName {
+    @extend .profileInput;
+    grid-area: fullname;
+  }
+  &__dob {
+    @extend .profileInput;
+    grid-area: dob;
+  }
+  &__address {
+    @extend .profileInput;
+    grid-area: address;
+  }
+
+  &__phone {
+    @extend .profileInput;
+    grid-area: phone;
+  }
+  &__cell {
+    @extend .profileInput;
+    grid-area: cell;
+  }
+  &__username {
+    @extend .profileInput;
+    grid-area: username;
+  }
+  &__email {
+    @extend .profileInput;
+    grid-area: email;
+  }
+  &__password {
+    @extend .profileInput;
+    grid-area: password;
+  }
+  &__cPassword {
+    @extend .profileInput;
+    grid-area: cpassword;
+  }
+
+  &__gender {
+    cursor: pointer;
+    & ~ label {
+      font-size: 0.8em;
+      margin-left: 5px;
+      @extend .profileInput__gender;
+    }
+  }
+}

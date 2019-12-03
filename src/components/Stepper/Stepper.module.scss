@@ -19,22 +19,20 @@ $completed-bubble: darken($bubble, 15%);
     width: 10em;
     position: relative;
     pointer-events: none;
-
-    &-active {
+    &-completed {
       @extend .stepperGuide__step;
       pointer-events: initial;
       cursor: pointer;
-    }
-    &:hover {
-      svg {
-        fill: lighten(map-get($primary-colors, hover), 10%);
+      &:hover {
+        svg {
+          fill: lighten(map-get($primary-colors, hover), 2%);
+        }
       }
     }
   }
 
   &__stepNumber {
     fill: $bubble;
-
     &-completed {
       fill: $completed-bubble;
     }
@@ -42,11 +40,10 @@ $completed-bubble: darken($bubble, 15%);
 
   &__link {
     position: absolute;
-    width: 75%;
+    width: 65%;
     border: 1px solid $bubble;
-    left: 62%;
+    left: 67%;
     top: 11px;
-
     &-completed {
       @extend .stepperGuide__link;
       border-color: $completed-bubble;
@@ -60,4 +57,9 @@ $completed-bubble: darken($bubble, 15%);
   padding: 1em;
   overflow-y: auto;
   flex: 1 1 auto;
+}
+
+.stepperNavActions {
+  display: flex;
+  justify-content: center;
 }

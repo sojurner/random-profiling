@@ -4,7 +4,11 @@ import InitialSequence from '~components/InitialSequence';
 
 const RootPage: React.FC = () => {
   return (
-    <FlexBox gridColumn="1 / 6" justifyContent="center" alignItems="center">
+    <FlexBox
+      gridArea="2 / 1 / 6 / 6"
+      justifyContent="center"
+      alignItems="center"
+    >
       <InitialSequence />
     </FlexBox>
   );

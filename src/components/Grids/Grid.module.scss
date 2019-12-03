@@ -1,0 +1,36 @@
+@import 'styles/variables';
+
+.grid__base {
+  display: grid;
+}
+
+.grid__main {
+  @extend .grid__base;
+
+  height: inherit;
+  grid-template-areas:
+    'appbar appbar  appbar  appbar appbar'
+    'aside  content content content content'
+    'aside  content content content content'
+    'aside  content content content content'
+    'aside  content content content content';
+
+  grid-template-columns: 180px 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr 1fr 1fr 1fr;
+}
+
+.formGrid {
+  &__profile {
+    @extend .grid__base;
+    height: 100%;
+    grid-template-areas:
+      'fullname   fullname  fullname  fullname'
+      'dob        dob       gender    gender'
+      'address    address   phone     cell'
+      'username   username  email     email'
+      'password   password  _         _'
+      'cpassword cpassword  _         _';
+    grid-template-columns: 22vw 22vw 22vw 22vw;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}

@@ -16,14 +16,16 @@ const StepperGuide: React.FC<StepperProps> = ({
   className,
   handleStepChange
 }) => {
+  const activeClassSwitch = (condition: boolean, base: string): string => {
+    return !condition
+      ? styles[`${className}__${base}`]
+      : styles[`${className}__${base}-completed`];
+  };
+
   const steppers = steps.map((step, index) => (
     <div
       onClick={currentStep > index ? () => handleStepChange(index) : () => {}}
-      className={
-        currentStep > index
-          ? styles[`${className}__step-active`]
-          : styles[`${className}__step`]
-      }
+      className={activeClassSwitch(currentStep > index, 'step')}
     >
       <svg
         height="1.5em"
@@ -32,11 +34,7 @@ const StepperGuide: React.FC<StepperProps> = ({
         viewBox="0 0 24 24"
         aria-hidden="true"
         role="presentation"
-        className={
-          currentStep >= index
-            ? styles[`${className}__stepNumber-completed`]
-            : styles[`${className}__stepNumber`]
-        }
+        className={activeClassSwitch(currentStep >= index, 'stepNumber')}
       >
         <circle cx="12" cy="12" r="12"></circle>
         <text fontSize="0.8em" fill="white" x="12" y="17" textAnchor="middle">
@@ -49,13 +47,7 @@ const StepperGuide: React.FC<StepperProps> = ({
         className={`${className}__label`}
       />
       {index !== steps.length - 1 && (
-        <span
-          className={
-            currentStep > index
-              ? styles[`${className}__link-completed`]
-              : styles[`${className}__link`]
-          }
-        />
+        <span className={activeClassSwitch(currentStep > index, 'link')} />
       )}
     </div>
   ));

@@ -20,6 +20,10 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  height: 100vh;
+}
+
 button {
   cursor: pointer;
   background: none;
