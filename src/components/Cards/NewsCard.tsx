@@ -35,7 +35,7 @@ const NewsCard: React.FC<INewsProps> = ({ url, urlToImage, src, title }) => (
       marginLeft="1rem"
       alignSelf="center"
       paddingRight="1rem"
-      flex-direction="column"
+      flexDirection="column"
     >
       <Typography className="newsCard__title" variant="p" children={title} />
       <Typography

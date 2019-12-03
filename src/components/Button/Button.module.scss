@@ -1,0 +1,42 @@
+@import 'styles/variables';
+
+$btnBg: #3c455f;
+
+.button__base {
+  padding: 0.3em 0.5em;
+}
+
+@mixin lightHover($color) {
+  &:hover {
+    background: lighten($color, 10%);
+  }
+}
+
+.button__sequence-getStarted {
+  @extend .button__base;
+  background: $btnBg;
+  border-radius: 10px;
+  color: white;
+  font-size: 1em;
+  margin: 40px 0;
+
+  @include lightHover($btnBg);
+}
+
+.button__stepperNavActions {
+  font-weight: bold;
+  &:disabled {
+    font-weight: 100;
+    color: gray;
+    pointer-events: none;
+  }
+  &-prev {
+    @extend .button__stepperNavActions;
+    font-size: 1em;
+  }
+
+  &-next {
+    @extend .button__stepperNavActions;
+    font-size: 1em;
+  }
+}

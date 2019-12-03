@@ -1,0 +1,19 @@
+@import 'styles/variables';
+
+.avatar__base {
+  border-radius: 50%;
+}
+
+.avatar__friendListItem {
+  @extend .avatar__base;
+  height: 40px;
+  width: 40px;
+}
+
+.avatar__comment {
+  @extend .avatar__base;
+
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+}

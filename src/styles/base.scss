@@ -20,6 +20,20 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 ul {
   list-style: none;
 }

@@ -1,10 +1,11 @@
 import React, { createElement } from 'react';
 import styles from './Typography.module.scss';
 
-export interface ITypographyProps {
+export interface ITypographyProps
+  extends React.HTMLAttributes<HTMLParagraphElement> {
   variant: string;
   className: string;
-  children: string;
+  children: string | number;
 }
 
 const Typography: React.FC<ITypographyProps> = ({

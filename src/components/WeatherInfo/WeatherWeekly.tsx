@@ -18,7 +18,12 @@ const WeatherWeekly: React.FC<{ forecast: IWeeklyWeatherProps[] }> = ({
   return (
     <div className={styles.weatherWeekly}>
       {forecast.map((weatherInfo, index) => (
-        <FlexBox position="relative" flexDirection="column" alignItems="center">
+        <FlexBox
+          key={`weatherWeekly-${index}`}
+          position="relative"
+          flexDirection="column"
+          alignItems="center"
+        >
           <Typography
             variant="h3"
             children={weatherInfo.date}

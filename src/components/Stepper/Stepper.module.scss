@@ -1,0 +1,65 @@
+@import 'styles/variables';
+
+$bubble: #82a9c1;
+$completed-bubble: darken($bubble, 15%);
+
+.flex-column-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.stepperGuide {
+  display: flex;
+  margin: 2em auto;
+  grid-area: span 5;
+
+  &__step {
+    @extend .flex-column-center;
+    width: 10em;
+    position: relative;
+    pointer-events: none;
+    &-completed {
+      @extend .stepperGuide__step;
+      pointer-events: initial;
+      cursor: pointer;
+      &:hover {
+        svg {
+          fill: lighten(map-get($primary-colors, hover), 2%);
+        }
+      }
+    }
+  }
+
+  &__stepNumber {
+    fill: $bubble;
+    &-completed {
+      fill: $completed-bubble;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    width: 65%;
+    border: 1px solid $bubble;
+    left: 67%;
+    top: 11px;
+    &-completed {
+      @extend .stepperGuide__link;
+      border-color: $completed-bubble;
+    }
+  }
+}
+
+.stepContent {
+  @extend .flex-column-center;
+  justify-content: space-between;
+  padding: 1em;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.stepperNavActions {
+  display: flex;
+  justify-content: center;
+}

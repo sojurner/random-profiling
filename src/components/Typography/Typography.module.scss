@@ -1,25 +1,48 @@
 @import 'styles/variables';
 
 .label__friend {
-  width: max-content;
   margin: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 110px;
 }
 
 .profileCard__userInfo {
-  margin-left: 5px;
+  margin: 0 0 0 5px;
 }
 
 .poemCard {
   &__caption {
-    margin-bottom: 10px;
-    color: gray;
+    &-date {
+      color: gray;
+      margin: 0 0 10px 0;
+    }
+    &-commentsCount {
+      margin: 30px 0 15px 0;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+        text-decoration-line: underline;
+      }
+    }
   }
-
   &__content {
+    color: map-get($primary-colors, active);
   }
-
   &__author {
-    margin-top: 10px;
+    margin: 10px 0 0 0;
+  }
+}
+
+.comment {
+  &__commenter {
+    font-weight: bold;
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+  &__content {
   }
 }
 
@@ -31,7 +54,7 @@
     width: max-content;
     &:after {
       content: '';
-      height: 0.35rem;
+      height: 0.25rem;
       width: 100%;
       background: rgb(214, 237, 255);
       display: block;
@@ -50,11 +73,9 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-
     font-size: 1em;
     text-decoration-line: none;
   }
-
   &__src {
     font-style: italic;
     font-size: 0.9em;
@@ -67,20 +88,31 @@
     color: map-get($weather-colors, current);
     padding: 0.2em 0.2em 0.2em 0.4em;
   }
-
   &__date {
     font-size: 1em;
   }
-
   &__high {
     color: map-get($weather-colors, high);
     font-size: 1em;
     margin: 2.5px 0;
   }
-
   &__low {
     color: map-get($weather-colors, low);
     font-size: 1em;
     margin: 2.5px 0;
+  }
+}
+
+.stepperGuide {
+  &__label {
+    margin-top: 10px;
+  }
+}
+
+.profileForm {
+  &__gender {
+    font-size: 1.5em;
+    margin: 0 20px 0 10px;
+    color: rgb(124, 124, 124);
   }
 }

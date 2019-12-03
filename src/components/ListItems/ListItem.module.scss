@@ -1,0 +1,26 @@
+@import 'styles/variables';
+
+.listItem__base {
+}
+
+.listItem__friend {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  border-radius: 50px;
+
+  &:hover {
+    p {
+      font-weight: bold;
+    }
+  }
+}
+
+.listItem__comment {
+  &-poem {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    margin: 0 0 15px 0;
+  }
+}
